@@ -36,7 +36,7 @@ git remote add upstream https://github.com/longmenjihua/longmen-ta-template.git
 
 ```bash
 git fetch upstream main
-git ls-tree -r --name-only upstream/main | grep -vE "^(每日输出|每日反馈|每日解答|每日补充|\.github|Skill|模式识别库)/|^CLAUDE\.md$" | while IFS= read -r f; do
+git ls-tree -r --name-only upstream/main | grep -vE "^(每日输出|每日反馈|每日解答|每日补充|\.github|Skill|模式识别库)/" | while IFS= read -r f; do
   git checkout upstream/main -- "$f" 2>/dev/null || echo "跳过: $f"
 done
 git add -A
